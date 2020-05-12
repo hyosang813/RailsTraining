@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
 root 'application#hello' # rootアクセスでhelloメソッドの値を返すルーティング
 
+get  'static_pages/home'
+get  'static_pages/help'
+
   namespace "api" do
     namespace "v1" do
       resources :products, only: [:index, :show], format: 'json'
