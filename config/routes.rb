@@ -5,6 +5,7 @@ root 'application#hello' # rootアクセスでhelloメソッドの値を返す�
 
 get  'static_pages/home'
 get  'static_pages/help'
+get  'static_pages/about'
 
   namespace "api" do
     namespace "v1" do
