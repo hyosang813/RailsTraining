@@ -2,16 +2,14 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  # field :name, type: String
-  # field :message, type: String
-  # field :age, type: Integer
+  attr_accessor :name, :email
 
-  field :user_id, type: String
-  field :password, type: String
+  def initialize(attributes = {})
+    @name  = attributes[:name]
+    @email = attributes[:email]
+  end
 
-  # has_many :article
-
-  has_many :working_hour
-
-  # おそらくここにアイパスのログイン可否メソッドが必要？
+  def formatted_email
+    "#{@name} <#{@email}>"
+  end
 end
