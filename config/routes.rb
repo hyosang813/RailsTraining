@@ -6,7 +6,9 @@ get  '/help',    to: 'static_pages#help'
 get  '/about',   to: 'static_pages#about'
 get  '/contact', to: 'static_pages#contact'
 get  '/signup',  to: 'users#new'
+resources :users
 
+# ここから下はAPI研修で使ったやつ
   namespace "api" do
     namespace "v1" do
       resources :products, only: [:index, :show], format: 'json'
